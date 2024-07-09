@@ -1,0 +1,205 @@
+.App {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+}
+
+#Nav {
+  color: white;
+  background-color: lightcoral;
+  border: 4px dashed white;
+  flex: 0 0 17em;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  background-color: lightsalmon;
+  margin: 0.5rem 0rem;
+  width: 100%;
+}
+
+.nav-item-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#Content {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 480px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
+  p,
+  li {
+    font-size: 0.8em;
+  }
+
+  .shop-name {
+    font-size: 1em;
+  }
+
+  .custom-sider {
+    position: fixed !important;
+    z-index: 10;
+    height: 100vh;
+    transition: transform 0.3s;
+    transform: translateX(0);
+  }
+
+  .custom-sider.collapsed {
+    transition: transform 0.3s;
+    transform: translateX(-100%);
+  }
+
+  .confirmation-description {
+    font-size: 10px;
+  }
+
+  .cart-table .ant-table {
+    scroll-behavior: smooth;
+  }
+
+  .cart-table .ant-table-container {
+    overflow-x: auto;
+  }
+
+  .faq-list p {
+    font-size: 13px;
+  }
+}
+
+.ant-layout-content {
+  overflow: scroll;
+  background-color: white;
+}
+
+.ant-card-cover {
+  height: 360px;
+}
+
+.add-to-cart-form .ant-form-item-label {
+  text-align: right;
+  margin-right: 8px;
+}
+
+.cart-table .red {
+  color: red;
+}
+
+.cart-table .green {
+  color: green;
+}
+
+@media print {
+  @page {
+    margin: 200;
+  }
+  .ant-table-footer {
+    display: none;
+  }
+  .cart-table .red {
+    text-decoration: line-through;
+  }
+}
+
+.item-table .red {
+  color: red;
+}
+
+.item-table .green {
+  color: green;
+}
+
+body {
+  margin: 0;
+}
+
+/* 
+Increase the size of cart selector spinning,
+TODO maybe throw a class on cart selector in the future and incorporate it into this 
+style because right now it'll target all antd selects 
+*/
+.ant-select-arrow-loading .anticon-loading svg {
+  font-size: 1.25rem;
+}
+
+.ant-card ul.ant-card-actions > li {
+  margin: 0;
+}
+
+.ant-card-meta-title {
+  white-space: pre-line !important;
+  height: 50px;
+}
+
+/*
+Make entire card action clickable
+*/
+ul.ant-card-actions li span {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6f4ff;
+  color: #1677ff;
+}
+
+ul.ant-card-actions li span:hover {
+  color: #69b1ff;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover {
+  font-size: inherit;
+  color: currentColor;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-prev:hover {
+  left: 10px;
+  z-index: 2;
+  color: white;
+}
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-next:hover {
+  right: 10px;
+  z-index: 2;
+  color: white;
+}
+
+#carousel-arrow-wrapper {
+  display: flex !important; /* I am sorry for I have sinned but it seems this is necessary because react-slick appends a style to the element */
+  align-items: center;
+  justify-content: center;
+  background-color: dimgray;
+  border-radius: 7px;
+}
+
+body .slick-prev::before,
+body .slick-next::before {
+  display: none;
+}
+
+/* change antd's sider implementation from block to flex so we can position SFIT logo at the bottom of sider */
+.custom-sider .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+}

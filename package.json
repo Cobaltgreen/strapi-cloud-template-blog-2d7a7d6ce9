@@ -1,39 +1,70 @@
 {
-  "dependencies": {
-    "@strapi/plugin-graphql": "^4.0.5",
-    "fs-extra": "^10.0.0",
-    "lodash.set": "^4.3.2",
-    "mime-types": "^2.1.27",
-    "@strapi/strapi": "4.21.1",
-    "@strapi/plugin-users-permissions": "4.21.1",
-    "@strapi/plugin-i18n": "4.21.1",
-    "@strapi/plugin-cloud": "4.21.1",
-    "better-sqlite3": "8.6.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
-  },
-  "name": "my-app-name",
-  "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "name": "lululedger",
+  "version": "1.0.0",
+  "description": "Lululedger is a platform for SFIT Lululemon fundraising orders.",
+  "main": "server.js",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "start": "npx webpack && ts-node ./src/server/server.ts",
+    "watch": "npx webpack --watch",
+    "watch_server": "npx nodemon ./src/server/server.ts & wait",
+    "build_prod": "npx webpack --mode production & npx tsc & wait",
+    "lulurl_parser": "npm i; npx ts-node ./scripts/lulurl_parser.ts"
   },
-  "devDependencies": {},
-  "author": {
-    "name": "A Strapi developer"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dianezhou96/lululedger.git"
   },
-  "strapi": {
-    "template": "blog"
+  "author": "Diane Zhou, Alex Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dianezhou96/lululedger/issues"
   },
-  "engines": {
-    "node": ">=18.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
+  "homepage": "https://github.com/dianezhou96/lululedger#readme",
+  "dependencies": {
+    "@playwright/browser-chromium": "^1.42.1",
+    "@sendgrid/mail": "^7.7.0",
+    "express": "^4.18.2",
+    "express-static-gzip": "^2.1.7",
+    "moment-timezone": "^0.5.43",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.11",
+    "nodemailer": "^6.9.3",
+    "parcel": "^2.8.2",
+    "playwright": "^1.42.1",
+    "qs": "^6.11.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7",
+    "react-to-print": "^2.14.13",
+    "remark-gfm": "^3.0.1",
+    "uuid": "^9.0.0",
+    "webpackbar": "^5.0.2"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.2.12",
+    "@types/webpack": "^5.28.0",
+    "@webpack-cli/generators": "^3.0.1",
+    "antd": "^5.6.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^10.0.0",
+    "connect-livereload": "^0.6.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.22",
+    "react-router-dom": "^6.13.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "wepack-cli": "^0.0.1-security"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  }
 }
